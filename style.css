@@ -1272,3 +1272,44 @@ footer {
     }
 
 }
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-width: 400px) {
+
+    .app {
+        width: min(100% - 20px, 940px);
+    }
+
+    .hero {
+        padding-top: 42px;
+        padding-bottom: 32px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+    .todo-heading h3 {
+        font-size: 25px;
+    }
+
+    .filter-btn {
+        padding: 7px 8px;
+        font-size: 9px;
+    }
+
+    #taskList li {
+        gap: 9px;
+        padding: 8px;
+    }
+
+    #taskList li span {
+        font-size: 12px;
+    }
+
+    .delete-btn {
+        padding: 6px 7px;
+    }
+}

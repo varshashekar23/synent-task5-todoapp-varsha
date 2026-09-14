@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NOVA — To-Do List</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+    <main class="app">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="brand-mark">
+                    <span>✓</span>
+                </div>
+
+                <div class="brand-info">
+                    <h1>NOVA</h1>
+                    <p>TO-DO LIST</p>
+                </div>
+
+            </div>
+
+            <div class="header-date">
+                <span class="date-label">TODAY</span>
+                <span id="date"></span>
+            </div>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    YOUR DAILY SPACE
+                </div>
+
+                <h2>
+                    Make room for<br>
+                    <em>what matters.</em>
+                </h2>
+
+                <p>
+                    A calmer way to organize your day,
+                    prioritize your goals, and stay consistent.
+                </p>
+
+            </div>
+
+            <div class="hero-number">
+                <span>01</span>
+            </div>
+
+        </section>
+
+
+        <!-- STATS -->
+
+        <section class="stats">
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span>Total</span>
+                    <span class="stat-symbol">○</span>
+                </div>
+
+                <strong id="totalTasks">0</strong>
+
+                <p>All your tasks</p>
+
+            </div>
+
+
+            <div class="stat-card highlight">
+
+                <div class="stat-top">
+                    <span>Completed</span>
+                    <span class="stat-symbol">✓</span>
+                </div>
+
+                <strong id="completedTasks">0</strong>
+
+                <p>Goals accomplished</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-top">
+                    <span>Remaining</span>
+                    <span class="stat-symbol">◐</span>
+                </div>
+
+                <strong id="remainingTasks">0</strong>
+
+                <p>Still to complete</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- TODO CARD -->
+
+        <section class="todo-card">
+
+            <div class="todo-heading">
+
+                <div>
+
+                    <div class="section-label">
+                        TODAY'S PLAN
+                    </div>
+
+                    <h3>My To-Do List</h3>
+
+                </div>
+
+                <div class="live-indicator">
+                    <span></span>
+                    LIVE
+                </div>
+
+            </div>
+
+
+            <!-- INPUT -->
+
+            <div class="input-wrapper">
+
+                <div class="input-icon">
+                    +
+                </div>
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Add something to your list..."
+                    autocomplete="off"
+                >
+
+                <button id="addTaskButton">
+                    Add Task
+                    <span>↗</span>
+                </button>
+
+            </div>
+
+
+            <!-- FILTER -->
+
+            <div class="list-toolbar">
+
+                <div class="filters">
+
+                    <button
+                        class="filter-btn active"
+                        data-filter="all">
+                        All
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="active">
+                        Active
+                    </button>
+
+                    <button
+                        class="filter-btn"
+                        data-filter="completed">
+                        Completed
+                    </button>
+
+                </div>
+
+                <span class="keyboard-hint">
+                    Press <b>Enter</b> to add
+                </span>
+
+            </div>
+
+
+            <!-- TASKS -->
+
+            <ul id="taskList"></ul>
+
+
+            <!-- EMPTY STATE -->
+
+            <div id="emptyState">
+
+                <div class="empty-circle">
+                    ✓
+                </div>
+
+                <h4>Nothing here yet</h4>
+
+                <p>
+                    Your list is waiting for something
+                    worth accomplishing.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <div class="footer-brand">
+                NOVA
+            </div>
+
+            <div class="footer-line"></div>
+
+            <div class="footer-text">
+                Designed for focus · Built for consistency
+            </div>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

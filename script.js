@@ -113,6 +113,7 @@ function displayTasks() {
         const span =
             document.createElement("span");
 
+
         /*
          * textContent prevents
          * HTML/script injection.
@@ -160,6 +161,7 @@ function displayTasks() {
     updateEmptyState();
 
     updateStats();
+
 }
 
 
@@ -268,6 +270,26 @@ function addTask() {
     }
 
 
+    /* PREVENT DUPLICATE TASKS */
+
+    const duplicateTask =
+        tasks.some(
+            task =>
+                task.text.toLowerCase() ===
+                text.toLowerCase()
+        );
+
+
+    if (duplicateTask) {
+
+        alert("This task already exists.");
+
+        taskInput.focus();
+
+        return;
+    }
+
+
     const newTask = {
 
         id:
@@ -277,7 +299,6 @@ function addTask() {
         text: text,
 
         completed: false
-
     };
 
 
@@ -293,6 +314,7 @@ function addTask() {
 
     currentFilter = "all";
 
+
     filterButtons.forEach(button => {
 
         button.classList.remove("active");
@@ -302,12 +324,14 @@ function addTask() {
         ) {
 
             button.classList.add("active");
+
         }
 
     });
 
 
     displayTasks();
+
 }
 
 
@@ -333,6 +357,7 @@ function completeTask(id) {
     saveTasks();
 
     displayTasks();
+
 }
 
 
@@ -351,6 +376,7 @@ function deleteTask(id) {
     saveTasks();
 
     displayTasks();
+
 }
 
 
@@ -364,6 +390,7 @@ function saveTasks() {
         "novaTasks",
         JSON.stringify(tasks)
     );
+
 }
 
 
@@ -395,6 +422,7 @@ function updateStats() {
 
     remainingTasks.textContent =
         remaining;
+
 }
 
 
@@ -447,6 +475,7 @@ taskInput.addEventListener(
             event.preventDefault();
 
             addTask();
+
         }
 
     }
@@ -480,6 +509,7 @@ function showDate() {
         month: "long",
 
         day: "numeric"
+
     };
 
 
@@ -488,6 +518,7 @@ function showDate() {
             "en-US",
             options
         );
+
 }
 
 
